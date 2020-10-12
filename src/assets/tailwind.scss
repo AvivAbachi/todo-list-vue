@@ -67,15 +67,7 @@ body {
     --color-disabled-title: #a0aec0;
     --color-disabled-text: #718096;
   }
-}
 
-/* Reset */
-html {
-  @apply font-sans;
-  @apply font-medium;
-}
-
-body {
   color: var(--color-text);
   font-size: 1.125em;
   @apply antialiased;
@@ -724,18 +716,18 @@ a {
   @apply w-full;
   @apply opacity-25;
   @apply select-none;
+  @apply text-center;
 
   h2 {
     font-size: 2.675em;
-    @apply text-center;
     @apply tracking-wider;
     @apply font-bold;
     @apply mb-5;
   }
 
   .icon {
-    @apply mx-auto;
     @apply w-24;
+    @apply h-24;
   }
 }
 
