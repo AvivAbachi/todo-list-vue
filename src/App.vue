@@ -38,7 +38,6 @@ import NoTodo from './components/NoTodo';
 // Property
 const addTodos = 30; // How many Todos  Add on Scroll
 const dbName = 'todo_list';
-const htmlDataset = document.firstElementChild;
 
 // Animation Property
 const duration = 1000; // ms
@@ -64,6 +63,7 @@ export default {
     });
     let grid = null;
     const warpper = ref(null);
+    const body = document.body;
     const orderTodos = computed(() => state.todos.sort((a, b) => (a.order > b.order ? 1 : a.order < b.order ? -1 : 0)));
     const leftTodos = computed(() => state.todos.filter((todo) => !todo.done).length);
 
@@ -85,7 +85,7 @@ export default {
         : localStorage['prefers-color-scheme'] === 'light'
         ? false
         : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    htmlDataset.dataset.theme = state.themeDark ? 'dark' : '';
+    state.themeDark ? body.classList.add('theme-dark') : body.classList.remove('theme-dark');
 
     onMounted(() => {
       // Create Gird
@@ -216,7 +216,7 @@ export default {
     function toggleTheme() {
       state.themeDark = !state.themeDark;
       localStorage['prefers-color-scheme'] = state.themeDark ? 'dark' : 'light';
-      htmlDataset.dataset.theme = state.themeDark ? 'dark' : '';
+      state.themeDark ? body.classList.add('theme-dark') : body.classList.remove('theme-dark');
     }
 
     // Handel Scroll to Load More Todos
@@ -255,9 +255,9 @@ export default {
       const time = new Date();
       el.href = URL.createObjectURL(file);
       el.download = `${time.getHours()}-${time.getMinutes()}-${time.getSeconds()}-${time.getDate()}-${time.getMonth()}-${time.getFullYear()}`;
-      document.body.appendChild(el);
+      body.appendChild(el);
       el.click();
-      document.body.removeChild(el);
+      body.removeChild(el);
     }
 
     // Open Todos from JSON
@@ -265,7 +265,7 @@ export default {
       const el = document.createElement('input');
       el.type = 'file';
       el.accept = 'application/JSON';
-      document.body.appendChild(el);
+      body.appendChild(el);
       el.click();
       el.addEventListener('change', () => getFile(el));
     }
@@ -289,7 +289,7 @@ export default {
         console.error(error);
       } finally {
         el.removeEventListener('change', (e) => getFile(e.target));
-        document.body.removeChild(el);
+        body.removeChild(el);
       }
     }
 

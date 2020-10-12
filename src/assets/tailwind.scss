@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 
-/* Theme */
+/* Reset & Theme */
 // Font
 @layer base {
   @font-face {
@@ -28,7 +28,14 @@
   }
 }
 
-:root {
+// Html Set Font
+html {
+  @apply font-sans;
+  @apply font-medium;
+}
+
+// Body Theme & Rest
+body {
   //Theme Light
   --background-body: #40e1e4;
   --background-card: #fff;
@@ -45,7 +52,7 @@
   --color-disabled-text: #a0aec0;
 
   // Theme Dark
-  &[data-theme='dark'] {
+  &.theme-dark {
     --background-body: #1a202c;
     --background-card: #2d3748;
     --background-modal: #edf2f750;
@@ -76,6 +83,7 @@ body {
   @apply overflow-hidden;
 }
 
+// Link
 a {
   @apply text-blue-500;
   &:hover {
@@ -92,6 +100,7 @@ a {
   }
 }
 
+// Vue App
 #app {
   background-color: var(--background-body);
   @apply overflow-hidden;
