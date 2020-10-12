@@ -1,0 +1,15 @@
+{
+  "short_name": "Todo List",
+  "name": "Todo List Vue",
+  "description": "Todo List Vue created by AvivAbachi@gmail.com",
+  "start_url": "./",
+  "orientation": "portrait",
+  "display": "standalone",
+  "theme_color": "#003652",
+  "background_color": "#e4e4e4",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "utilities"
+  ]
+}

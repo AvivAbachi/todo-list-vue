@@ -1,0 +1,59 @@
+{
+  "name": "todo-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "serve build": "serve -d dist"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "core-js": "^3.6.5",
+    "dexie": "^3.0.2",
+    "muuri": "^0.9.3",
+    "register-service-worker": "^1.7.1",
+    "vue": "^3.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.7",
+    "@vue/cli-plugin-eslint": "^4.5.7",
+    "@vue/cli-plugin-pwa": "^4.5.7",
+    "@vue/cli-service": "^4.5.7",
+    "@vue/compiler-sfc": "^3.0.0-beta.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.1",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.3",
+    "vue-cli-plugin-sass-resources-loader": "^1.0.0",
+    "vue-cli-plugin-tailwind": "^1.5.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:vue/recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "sourceType": "module"
+    },
+    "rules": {
+      "vue/no-unused-components": "warn",
+      "vue/no-unused-vars": "warn",
+      "no-unused-vars": "warn",
+      "vue/max-attributes-per-line": "off",
+      "vue/html-self-closing": "off"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
